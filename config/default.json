@@ -1,0 +1,3 @@
+{
+  "mongoURI": "mongodb+srv://julian:julian@vibrateproject-djy7s.mongodb.net/test?retryWrites=true&w=majority"
+}
