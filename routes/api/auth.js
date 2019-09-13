@@ -3,7 +3,7 @@ const router = express.Router();
 //adding the auth middleware as a second parameter will make this route protected
 const auth = require('../../middleware/auth');
 const config = require('config');
-const { check, validationResult } = require('express-validator/check');
+const { check, validationResult } = require('express-validator');
 const jwt = require('jsonwebtoken');
 const bcrypt = require('bcryptjs');
 const User = require('../../models/User');

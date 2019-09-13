@@ -15,10 +15,11 @@ const connectDB = async () => {
       //mongoose.connect returns a promise, so we use await
       useNewUrlParser: true,
       useCreateIndex: true,
-      useFindAndModify: false
+      useFindAndModify: false,
+      useUnifiedTopology: true
     });
 
-    console.log('MongoDB Connected...');
+    console.log('MongoDB connected succesfully!');
   } catch (err) {
     console.error(err.message);
     // Exit process with failure

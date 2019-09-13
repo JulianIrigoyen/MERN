@@ -9,7 +9,7 @@ const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const config = require('config');
 //Use validator for user requests
-const { check, validationResult } = require('express-validator/check'); //Express-validator.github
+const { check, validationResult } = require('express-validator'); //Express-validator.github
 const User = require('../../models/User'); //Bring the model
 
 //@route GET api/users -> this is the actual request type

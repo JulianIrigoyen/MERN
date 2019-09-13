@@ -1,5 +1,8 @@
 const mongoose = require('mongoose');
-//how you define fields and specifiy our model for mongodb
+/*
+  How you define fields and specifiy our model for mongodb:
+  mongoose.Schema({Object with all the fields and each fields' properties})
+*/
 const UserSchema = new mongoose.Schema({
   name: {
     type: String,
