@@ -6,6 +6,9 @@ const app = express();
 //Connect MongoDB
 connectDB();
 
+//Init Middleware
+app.use(express.json({ extended: false })); //allows to get data from req.body transactions
+
 app.get('/', (req, res) => res.send('API Running'));
 
 //Define Routes -> mapping 1st param ('api/users') to definition in 2nd param (routes/api/users.js)
