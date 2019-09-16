@@ -1,4 +1,6 @@
 {
   "mongoURI": "mongodb+srv://julian:julian@vibrateproject-djy7s.mongodb.net/test?retryWrites=true&w=majority",
-  "jwtToken": "token"
+  "jwtToken": "token",
+  "githubClientId": "12c09b5848093e342669",
+  "githubSecret": "0bb6258b8ffdb164af4af74602c23ff4e40a20ff"
 }
