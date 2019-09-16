@@ -34,7 +34,7 @@ router.get('/me', auth, async (req, res) => {
 router.post(
   '/',
   [
-    //We need to pass both the auth middleware and the validator (just check for status & skills)
+    //Pass both the auth middleware and the validator (just check for status & skills)
     auth,
     [
       check('status', 'Status is required')
@@ -328,34 +328,34 @@ router.delete('/education/:edu_id', auth, async (req, res) => {
 //@route GET api/profile/github/:username
 //@desc Get user repos from github
 //@access Public
-// const githubClientId = config.get('githubClientId');
-// const githubSecret = config.get('githubSecret');
-// console.log(githubClientId, githubSecret);
-// router.get('/github/:username', async (req, res) => {
-//   try {
-//     const options = {
-//       uri:
-//         'https://api.github.com/users/${req.params.username}/repos?per_age=5&sort=created:asc&client_id=' +
-//         githubClientId +
-//         '&client_secret=' +
-//         githubSecret,
-//       method: 'GET',
-//       headers: { 'user-agent': 'node.js' }
-//     };
+const githubClientId = config.get('githubClientId');
+const githubSecret = config.get('githubSecret');
+console.log(githubClientId, githubSecret);
+router.get('/github/:username', async (req, res) => {
+  try {
+    const options = {
+      uri:
+        'https://api.github.com/users/${req.params.username}/repos?per_age=5&sort=created:asc&client_id=' +
+        githubClientId +
+        '&client_secret=' +
+        githubSecret,
+      method: 'GET',
+      headers: { 'user-agent': 'node.js' }
+    };
 
-//     request(options, (error, response, body) => {
-//       if (error) console.error(error);
+    request(options, (error, response, body) => {
+      if (error) console.error(error);
 
-//       if (response.statusCode != 200) {
-//         res.status(404).json({ msg: 'No GitHub profile found' });
-//       }
+      if (response.statusCode != 200) {
+        res.status(404).json({ msg: 'No GitHub profile found' });
+      }
 
-//       res.json(JSON.parse(body));
-//     });
-//   } catch (err) {
-//     console.error(err.message);
-//     res.status(500).send('Server Error');
-//   }
-// });
+      res.json(JSON.parse(body));
+    });
+  } catch (err) {
+    console.error(err.message);
+    res.status(500).send('Server Error');
+  }
+});
 
 module.exports = router;
