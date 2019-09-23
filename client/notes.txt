@@ -1,0 +1,27 @@
+# Set up React
+
+#Create a react application on the client folder
+npx create-react-app {directory}
+#npx comes installed with npm and allows to creat the react app without having to installing it locally
+#To start the app:  
+cd client/
+npm start
+
+# Set up Concurrently to and optimize scripts to launch:
+package/json 
+Add script: "client" : "npm start --prefix client"
+#To run server and client
+Add script: "dev" : "concurrently \"npm run server\" \"npm run client\""
+
+
+#Client Dependencies
+npm i 
+axios #To make HTTP Requests
+react-router
+redux react-redux
+redux-thunk #For async requests
+redux-devtools-extension #make thunk easier
+moment read-moment
+
+#Set up Proxy @client/package.json
+ "proxy": "http://localhost:5000"
